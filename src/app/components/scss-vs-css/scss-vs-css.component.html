@@ -1,0 +1,145 @@
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+  <div class="flex flex-grow flex-col gap-3">
+    <div class="flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4">
+      <div class="markdown prose w-full break-words dark:prose-invert dark">
+        <p>
+          SCSS (Sassy CSS) jest jednym z formatów składniowych, które można używać w preprocesorze
+          Sass. W rzeczywistości, SCSS jest rozszerzeniem składniowym dla Sass, które umożliwia
+          pisanie kodu w sposób bardziej zbliżony do zwykłego CSS. Oto porównanie SCSS i CSS:
+        </p>
+        <ol>
+          <li>
+            <p>Składnia:</p>
+            <ul>
+              <li>
+                CSS: Składnia CSS jest oparta na blokach selektorów i właściwościach oddzielonych
+                średnikami.
+              </li>
+              <li>
+                SCSS: Składnia SCSS jest bardzo zbliżona do CSS. Korzysta z tej samej składni bloków
+                selektorów i właściwości oddzielonych średnikami. Jest bardziej czytelna i
+                łatwiejsza do przyswojenia dla osób pracujących z tradycyjnym CSS.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>Zagnieżdżanie selektorów:</p>
+            <ul>
+              <li>
+                CSS: W czystym CSS nie ma wbudowanej funkcji zagnieżdżania selektorów. W wyniku tego
+                kod może stać się bardziej rozbudowany i powtarzalny.
+              </li>
+              <li>
+                SCSS: SCSS umożliwia zagnieżdżanie selektorów, co ułatwia organizację stylów i unika
+                powtarzania kodu. Można zagnieżdżać selektory wewnątrz innych selektorów, co
+                prowadzi do bardziej hierarchicznej struktury kodu.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>Zmienne:</p>
+            <ul>
+              <li>
+                CSS: W czystym CSS nie ma wbudowanej funkcji zmiennych. Konieczne jest ręczne
+                powtarzanie wartości w różnych miejscach kodu.
+              </li>
+              <li>
+                SCSS: SCSS wprowadza wsparcie dla zmiennych, co pozwala na zdefiniowanie wartości
+                jako zmienne i ponowne ich użycie w różnych miejscach. Używanie zmiennych ułatwia
+                dostosowywanie i utrzymanie stylów.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>Mixin'y:</p>
+            <ul>
+              <li>
+                CSS: Czyste CSS nie obsługuje funkcjonalności mixin'ów. Ponowne użycie zestawów
+                reguł stylów może wymagać wielokrotnego powtarzania kodu.
+              </li>
+              <li>
+                SCSS: SCSS umożliwia tworzenie mixin'ów, czyli zbiorów reguł stylów, które można
+                wielokrotnie używać w różnych miejscach. Mixin'y ułatwiają tworzenie modułowych
+                stylów i zmniejszają ilość powtarzalnego kodu.
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <p>
+          Podsumowując, SCSS jest rozszerzeniem składniowym dla preprocesora Sass, które wprowadza
+          funkcjonalności, takie jak zagnieżdżanie selektorów, zmienne i mixin'y. Używanie SCSS
+          zamiast czystego CSS pozwala na bardziej czytelny i modułowy kod, ułatwiający utrzymanie i
+          dostosowywanie stylów w projektach. Jednakże, przeglądarki internetowe nie rozumieją
+          bezpośrednio składni SCSS, więc konieczne jest skompilowanie go do standardowego CSS przed
+          wdrożeniem na stronie internetowej.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between lg:block">
+    <div
+      class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"
+    >
+      <button
+        class="flex ml-auto gap-2 rounded-md p-1 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+          <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+        </svg>
+      </button>
+      <div class="flex gap-1">
+        <button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+            ></path>
+          </svg></button
+        ><button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

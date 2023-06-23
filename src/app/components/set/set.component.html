@@ -1,0 +1,131 @@
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+  <div class="flex flex-grow flex-col gap-3">
+    <div
+      class="min-h-[20px] flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4"
+    >
+      <div class="markdown prose w-full break-words dark:prose-invert dark">
+        <p>
+          Set w JavaScript to struktura danych, która przechowuje unikalne wartości, bez powtórzeń.
+          Może zawierać różne typy danych, takie jak liczby, ciągi znaków, obiekty itp.
+        </p>
+        <p>Podstawowe metody obiektu Set:</p>
+        <ul>
+          <li><code>add(value)</code>: Dodaje wartość do zbioru.</li>
+          <li><code>delete(value)</code>: Usuwa wartość ze zbioru.</li>
+          <li><code>has(value)</code>: Sprawdza, czy wartość istnieje w zbiorze.</li>
+          <li><code>clear()</code>: Usuwa wszystkie elementy ze zbioru.</li>
+          <li><code>size</code> (właściwość): Zwraca liczbę elementów w zbiorze.</li>
+          <li>
+            <code>forEach(callbackFn)</code>: Wykonuje podaną funkcję zwrotną dla każdego elementu
+            zbioru.
+          </li>
+          <li><code>values()</code>: Zwraca iterator z wartościami zbioru.</li>
+          <li>
+            <code>keys()</code>: To samo co <code>values()</code>, ale jest dostępne dla zachowania
+            zgodności z interfejsem iteracji.
+          </li>
+          <li>
+            <code>entries()</code>: Zwraca iterator z tablicami zawierającymi pary [value, value],
+            gdzie pierwszy element to wartość, a drugi to również wartość (zgodność z Map).
+          </li>
+        </ul>
+        <p>
+          Set jest użyteczny w przypadkach, gdy chcesz przechowywać jedynie unikalne wartości i nie
+          zależy Ci na kolejności elementów. Może być stosowany do eliminowania duplikatów z
+          tablicy, sprawdzania przynależności elementu do zbioru, wykonywania operacji na zbiorach
+          itp.
+        </p>
+        <p>Przykład użycia Set:</p>
+        <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>javascript</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-keyword">const</span> mySet = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>();
+mySet.<span class="hljs-title function_">add</span>(<span class="hljs-number">1</span>);
+mySet.<span class="hljs-title function_">add</span>(<span class="hljs-number">2</span>);
+mySet.<span class="hljs-title function_">add</span>(<span class="hljs-number">3</span>);
+mySet.<span class="hljs-title function_">add</span>(<span class="hljs-number">2</span>); <span class="hljs-comment">// Duplikat, nie zostanie dodany</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(mySet.<span class="hljs-property">size</span>); <span class="hljs-comment">// 3</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(mySet.<span class="hljs-title function_">has</span>(<span class="hljs-number">2</span>)); <span class="hljs-comment">// true</span>
+
+mySet.<span class="hljs-title function_">delete</span>(<span class="hljs-number">3</span>);
+
+mySet.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> {{'{'}}
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(value);
+});
+<span class="hljs-comment">// Wyświetli:</span>
+<span class="hljs-comment">// 1</span>
+<span class="hljs-comment">// 2</span>
+</code></div></div></pre>
+        <p>
+          Set w JavaScript jest wygodnym narzędziem do pracy z unikalnymi wartościami i oferuje
+          prosty interfejs do manipulacji zbiorami.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between lg:block">
+    <div
+      class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"
+    >
+      <button
+        class="flex ml-auto gap-2 rounded-md p-1 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+          <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+        </svg>
+      </button>
+      <div class="flex gap-1">
+        <button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+            ></path>
+          </svg></button
+        ><button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

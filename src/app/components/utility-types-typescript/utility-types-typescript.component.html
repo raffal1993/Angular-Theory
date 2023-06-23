@@ -1,0 +1,255 @@
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+  <div class="flex flex-grow flex-col gap-3">
+    <div
+      class="min-h-[20px] flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4"
+    >
+      <div class="markdown prose w-full break-words dark:prose-invert dark">
+        <p>
+          Typy narzędziowe (Utility types) w TypeScript to zestaw wbudowanych typów, które ułatwiają
+          manipulację i transformację typów danych. Są to gotowe narzędzia, które można wykorzystać
+          do definiowania nowych typów na podstawie istniejących typów lub do wykonania różnych
+          operacji na typach.
+        </p>
+        <p>Oto kilka popularnych typów narzędziowych w TypeScript:</p>
+        <ol>
+          <li>
+            <code>Partial&lt;T&gt;</code>: Tworzy typ, który czyni wszystkie właściwości typu
+            <code>T</code> opcjonalnymi.
+          </li>
+        </ol>
+        <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>typescript</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Person</span> {{'{'}}
+        <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
+        <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;
+      }
+      
+      <span class="hljs-keyword">const</span> <span class="hljs-attr">partialPerson</span>: <span class="hljs-title class_">Partial</span>&lt;<span class="hljs-title class_">Person</span>&gt; = {{'{'}}}; <span class="hljs-comment">// Wszystkie właściwości są opcjonalne</span>
+      </code></div></div></pre>
+        <ol start="2">
+          <li>
+            <code>Required&lt;T&gt;</code>: Tworzy typ, który czyni wszystkie opcjonalne właściwości
+            typu <code>T</code> wymaganymi.
+          </li>
+        </ol>
+        <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>typescript</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Options</span> {{'{'}}
+        width?: <span class="hljs-built_in">number</span>;
+        height?: <span class="hljs-built_in">number</span>;
+      }
+      
+      <span class="hljs-keyword">const</span> <span class="hljs-attr">requiredOptions</span>: <span class="hljs-title class_">Required</span>&lt;<span class="hljs-title class_">Options</span>&gt; = {{'{'}}
+        <span class="hljs-attr">width</span>: <span class="hljs-number">100</span>,
+        <span class="hljs-attr">height</span>: <span class="hljs-number">200</span>,
+      }; <span class="hljs-comment">// Wszystkie właściwości są wymagane</span>
+      </code></div></div></pre>
+        <ol start="3">
+          <li>
+            <code>Readonly&lt;T&gt;</code>: Tworzy typ, w którym wszystkie właściwości typu
+            <code>T</code> są tylko do odczytu (niezmienne).
+          </li>
+        </ol>
+        <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>typescript</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Configuration</span> {{'{'}}
+        <span class="hljs-keyword">readonly</span> <span class="hljs-attr">apiKey</span>: <span class="hljs-built_in">string</span>;
+        <span class="hljs-keyword">readonly</span> <span class="hljs-attr">secretKey</span>: <span class="hljs-built_in">string</span>;
+      }
+      
+      <span class="hljs-keyword">const</span> <span class="hljs-attr">config</span>: <span class="hljs-title class_">Readonly</span>&lt;<span class="hljs-title class_">Configuration</span>&gt; = {{'{'}}
+        <span class="hljs-attr">apiKey</span>: <span class="hljs-string">"abc123"</span>,
+        <span class="hljs-attr">secretKey</span>: <span class="hljs-string">"xyz789"</span>,
+      };
+      
+      <span class="hljs-comment">// Nie można modyfikować wartości w config</span>
+      config.<span class="hljs-property">apiKey</span> = <span class="hljs-string">"newKey"</span>; <span class="hljs-comment">// Błąd kompilacji</span>
+      </code></div></div></pre>
+        <ol start="4">
+          <li>
+            <code>Pick&lt;T, K&gt;</code>: Tworzy typ, który wybiera tylko określone właściwości z
+            typu <code>T</code> na podstawie zbioru kluczy <code>K</code>.
+          </li>
+        </ol>
+        <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>typescript</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Person</span> {{'{'}}
+        <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
+        <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;
+        <span class="hljs-attr">address</span>: <span class="hljs-built_in">string</span>;
+      }
+      
+      <span class="hljs-keyword">const</span> <span class="hljs-attr">personNameOnly</span>: <span class="hljs-title class_">Pick</span>&lt;<span class="hljs-title class_">Person</span>, <span class="hljs-string">'name'</span>&gt; = {{'{'}}
+        <span class="hljs-attr">name</span>: <span class="hljs-string">'John'</span>,
+      }; <span class="hljs-comment">// Wybrano tylko właściwość 'name'</span>
+      </code></div></div></pre>
+        <ol start="5">
+          <li>
+            <code>Omit&lt;T, K&gt;</code>: Tworzy typ, który pomija określone właściwości z typu
+            <code>T</code> na podstawie zbioru kluczy <code>K</code>.
+          </li>
+        </ol>
+        <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>typescript</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-typescript"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Person</span> {{'{'}}
+        <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;
+        <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>;
+        <span class="hljs-attr">address</span>: <span class="hljs-built_in">string</span>;
+      }
+      
+      <span class="hljs-keyword">const</span> <span class="hljs-attr">personWithoutAge</span>: <span class="hljs-title class_">Omit</span>&lt;<span class="hljs-title class_">Person</span>, <span class="hljs-string">'age'</span>&gt; = {{'{'}}
+        <span class="hljs-attr">name</span>: <span class="hljs-string">'John'</span>,
+        <span class="hljs-attr">address</span>: <span class="hljs-string">'123 Main St'</span>,
+      }; <span class="hljs-comment">// Pominięto właściwość 'age'</span>
+      </code></div></div></pre>
+        <p>
+          Typy narzędziowe w TypeScript dostarczają wiele innych przydatnych funkcji i operacji na
+          typach, takich jak <code>Record</code>, <code>Exclude</code>, <code>Extract</code>,
+          <code>NonNullable</code>, <code>ReturnType</code> itp. Używanie tych typów narzędziowych
+          ułatwia tworzenie bardziej ekspresywnych i elastycznych definicji typów w TypeScript.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between lg:block">
+    <div
+      class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"
+    >
+      <button
+        class="flex ml-auto gap-2 rounded-md p-1 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+          <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+        </svg>
+      </button>
+      <div class="flex gap-1">
+        <button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+            ></path>
+          </svg></button
+        ><button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="flex justify-between items-center p-4 rounded-md bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm"
+    >
+      <div class="mr-4">Was this response better or worse?</div>
+      <button
+        title="This response was better than the previous response"
+        class="p-2 rounded-md hover:bg-gray-200 hover:text-gray-800 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200 flex items-center gap-2"
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4 mr-1"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+          ></path></svg
+        >Better</button
+      ><button
+        title="This response was worse than the previous response"
+        class="p-2 rounded-md hover:bg-gray-200 hover:text-gray-800 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200 flex items-center gap-2"
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4 mr-1"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
+          ></path></svg
+        >Worse</button
+      ><button
+        title="This response was the same in quality"
+        class="p-2 rounded-md hover:bg-gray-200 hover:text-gray-800 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200 flex items-center gap-2"
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4 mr-1 rounded-full border border-gray-400 dark:border-gray-300"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <desc></desc>
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M5 9h14m-14 6h14"></path></svg
+        >Same</button
+      ><button
+        title="Skip this comparison"
+        class="p-2 rounded-md hover:bg-gray-200 hover:text-gray-800 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200 flex items-center gap-2"
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-6 w-6"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

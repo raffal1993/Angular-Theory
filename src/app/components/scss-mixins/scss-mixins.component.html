@@ -1,0 +1,136 @@
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+  <div class="flex flex-grow flex-col gap-3">
+    <div
+      class="min-h-[20px] flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4"
+    >
+      <div class="markdown prose w-full break-words dark:prose-invert dark">
+        <p>
+          Mixin-y w preprocesorach CSS to narzędzia, które umożliwiają tworzenie wielokrotnie
+          używalnych bloków reguł stylów. Dzięki nim można zdefiniować zestaw właściwości i wartości
+          stylów, które można następnie wykorzystać w wielu miejscach kodu.
+        </p>
+        <p>Oto przykład użycia mixin-a w Sass/SCSS:</p>
+        <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>scss</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-scss"><span class="hljs-keyword">@mixin</span> button-style {{'{'}}
+        <span class="hljs-attribute">display</span>: inline-block;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">20px</span>;
+        <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#007bff</span>;
+        <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+        <span class="hljs-attribute">border</span>: none;
+        <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">4px</span>;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+        <span class="hljs-attribute">text-decoration</span>: none;
+      }
+      
+      <span class="hljs-selector-class">.button</span> {{'{'}}
+        <span class="hljs-keyword">@include</span> button-style;
+      }
+      
+      <span class="hljs-selector-class">.submit-button</span> {{'{'}}
+        <span class="hljs-keyword">@include</span> button-style;
+        <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#28a745</span>;
+      }
+      </code></div></div></pre>
+        <p>
+          W powyższym przykładzie zdefiniowano mixin o nazwie <code>button-style</code>, który
+          zawiera zestaw reguł stylów dla przycisków. Następnie mixin jest wykorzystywany w dwóch
+          różnych selektorach <code>.button</code> i <code>.submit-button</code>. Dodatkowo w
+          przypadku <code>.submit-button</code> nadpisano kolor tła.
+        </p>
+        <p>Po skompilowaniu tego kodu do zwykłego CSS, otrzymamy:</p>
+        <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>css</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-css"><span class="hljs-selector-class">.button</span> {{'{'}}
+        <span class="hljs-attribute">display</span>: inline-block;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">20px</span>;
+        <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#007bff</span>;
+        <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+        <span class="hljs-attribute">border</span>: none;
+        <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">4px</span>;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+        <span class="hljs-attribute">text-decoration</span>: none;
+      }
+      
+      <span class="hljs-selector-class">.submit-button</span> {{'{'}}
+        <span class="hljs-attribute">display</span>: inline-block;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">20px</span>;
+        <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#28a745</span>;
+        <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+        <span class="hljs-attribute">border</span>: none;
+        <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">4px</span>;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+        <span class="hljs-attribute">text-decoration</span>: none;
+      }
+      </code></div></div></pre>
+        <p>
+          Dzięki mixin-om możemy uniknąć powtarzania kodu CSS i zachować spójność w naszych stylach.
+          Możemy również przekazywać argumenty do mixin-ów, co pozwala na jeszcze większą
+          elastyczność i reużywalność.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between lg:block">
+    <div
+      class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"
+    >
+      <button
+        class="flex ml-auto gap-2 rounded-md p-1 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+          <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+        </svg>
+      </button>
+      <div class="flex gap-1">
+        <button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+            ></path>
+          </svg></button
+        ><button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

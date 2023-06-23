@@ -1,0 +1,159 @@
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+  <div class="flex flex-grow flex-col gap-3">
+    <div
+      class="min-h-[20px] flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4"
+    >
+      <div class="markdown prose w-full break-words dark:prose-invert dark">
+        <p>
+          In Angular, change detection is the process by which the framework determines if and when
+          to update the DOM (Document Object Model) based on changes to component properties or
+          events. By default, Angular uses a change detection strategy known as "zone.js" which
+          performs dirty checking on all components in the application.
+        </p>
+        <p>
+          However, Angular provides two additional change detection strategies that you can choose
+          from to optimize the performance of your application: "OnPush" and "Default" strategies.
+          Let's explore each of these strategies:
+        </p>
+        <ol>
+          <li>
+            <p>
+              Default Change Detection Strategy: This is the default strategy used by Angular. It
+              performs change detection on all components in the application whenever any event
+              occurs or a property is updated. It is a powerful strategy but can lead to unnecessary
+              and performance-intensive change detection cycles if not used carefully.
+            </p>
+          </li>
+          <li>
+            <p>
+              OnPush Change Detection Strategy: The OnPush strategy is an optimization technique
+              that reduces the number of components checked during change detection. With this
+              strategy, Angular only performs change detection on a component when one of the
+              following events occurs:
+            </p>
+            <ul>
+              <li>The component receives an input property change.</li>
+              <li>An event is triggered from the component or one of its child components.</li>
+              <li>
+                A component explicitly marks itself for change detection using
+                <code>ChangeDetectorRef.markForCheck()</code>.
+              </li>
+            </ul>
+            <p>
+              By using the OnPush strategy, you explicitly indicate that a component depends only on
+              its input properties and its own state, reducing unnecessary change detection cycles
+              and improving performance.
+            </p>
+          </li>
+        </ol>
+        <p>To apply the OnPush strategy to a component, you need to make the following changes:</p>
+        <ol>
+          <li>
+            Import the <code>ChangeDetectionStrategy</code> and
+            <code>ChangeDetectorRef</code> classes from <code>@angular/core</code>.
+          </li>
+          <li>
+            Set the <code>changeDetection</code> property of the component decorator to
+            <code>ChangeDetectionStrategy.OnPush</code>.
+          </li>
+          <li>Inject the <code>ChangeDetectorRef</code> in the component's constructor.</li>
+        </ol>
+        <p>Here's an example:</p>
+        <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>typescript</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-typescript"><span class="hljs-keyword">import</span> {{'{'}} <span class="hljs-title class_">Component</span>, <span class="hljs-title class_">ChangeDetectionStrategy</span>, <span class="hljs-title class_">ChangeDetectorRef</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+        
+        <span class="hljs-meta">@Component</span>({{'{'}}
+          <span class="hljs-attr">selector</span>: <span class="hljs-string">'app-example'</span>,
+          <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">'./example.component.html'</span>,
+          <span class="hljs-attr">changeDetection</span>: <span class="hljs-title class_">ChangeDetectionStrategy</span>.<span class="hljs-property">OnPush</span>
+        })
+        <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ExampleComponent</span> {{'{'}}
+          <span class="hljs-title function_">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> cdr: ChangeDetectorRef</span>) {{'{'}} }
+        
+          <span class="hljs-comment">// Your component code here</span>
+        }
+        </code></div></div></pre>
+        <p>
+          With the OnPush strategy in place, Angular will only perform change detection on the
+          component when it's necessary based on the conditions mentioned earlier.
+        </p>
+        <p>
+          It's important to note that when using the OnPush strategy, you need to be careful with
+          mutable data structures. If you modify an input property directly (instead of creating a
+          new reference), Angular might not detect the change. Therefore, it's recommended to use
+          immutable data patterns or trigger change detection manually using
+          <code>ChangeDetectorRef</code> when needed.
+        </p>
+        <p>
+          By choosing the appropriate change detection strategy for your Angular application, you
+          can optimize its performance and improve overall efficiency.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between lg:block">
+    <div
+      class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"
+    >
+      <button
+        class="flex ml-auto gap-2 rounded-md p-1 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+          <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+        </svg>
+      </button>
+      <div class="flex gap-1">
+        <button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+            ></path>
+          </svg></button
+        ><button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

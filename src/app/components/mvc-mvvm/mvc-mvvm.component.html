@@ -1,0 +1,136 @@
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+  <div class="flex flex-grow flex-col gap-3">
+    <div class="flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4">
+      <div class="markdown prose w-full break-words dark:prose-invert dark">
+        <p>
+          MVC (Model-View-Controller) i MVVM (Model-View-ViewModel) są dwoma popularnymi wzorcami
+          architektonicznymi stosowanymi w projektowaniu oprogramowania. Oba wzorce służą do
+          rozdzielenia odpowiedzialności i organizacji kodu w sposób modułowy i skalowalny. Oto
+          krótkie omówienie obu wzorców:
+        </p>
+        <p>
+          MVC (Model-View-Controller): MVC jest wzorcem architektonicznym, który rozdziela aplikację
+          na trzy główne komponenty:
+        </p>
+        <ol>
+          <li>
+            Model: Reprezentuje dane i logikę biznesową aplikacji. Odpowiada za przechowywanie
+            danych, manipulację nimi oraz udostępnianie interfejsu do dostępu do tych danych.
+          </li>
+          <li>
+            View: Odpowiada za prezentację danych użytkownikowi. Wyświetla interfejs użytkownika i
+            reaguje na interakcje użytkownika, takie jak wprowadzanie danych.
+          </li>
+          <li>
+            Controller: Pośredniczy między Modelem a Widokiem. Odbiera interakcje użytkownika z
+            Widoku, przetwarza je i wpływa na Model w celu aktualizacji danych. Ponadto może
+            zarządzać logiką przepływu danych między Modelem a Widokiem.
+          </li>
+        </ol>
+        <p>
+          MVVM (Model-View-ViewModel): MVVM jest wzorcem architektonicznym, który ma podobne cele
+          jak MVC, ale wprowadza dodatkowy komponent ViewModel:
+        </p>
+        <ol>
+          <li>Model: Jak w przypadku MVC, Model reprezentuje dane i logikę biznesową aplikacji.</li>
+          <li>View: Odpowiada za prezentację danych i interfejs użytkownika.</li>
+          <li>
+            ViewModel: Pełni rolę pośrednika między Modelem a Widokiem. ViewModel dostarcza dane i
+            logikę widoku, które są niezależne od konkretnego Widoku. Zapewnia metody i właściwości,
+            które są wykorzystywane przez Widok do wyświetlania danych i reagowania na interakcje
+            użytkownika. ViewModel również reaguje na zmiany w Modelu i aktualizuje Widok.
+          </li>
+        </ol>
+        <p>Różnice między MVC a MVVM:</p>
+        <ul>
+          <li>
+            W MVVM ViewModel pełni rolę dodatkowego pośrednika między Widokiem a Modelem, który
+            pomaga w oddzieleniu logiki widoku od konkretnych elementów interfejsu użytkownika.
+          </li>
+          <li>
+            W MVVM Widok jest pasywny i reaguje na zmiany w ViewModel, podczas gdy w MVC Widok może
+            bezpośrednio oddziaływać na Model.
+          </li>
+          <li>
+            MVVM jest często stosowany w technologiach, które oferują powiązania danych (data
+            binding), które automatycznie synchronizują dane między Widokiem a ViewModel.
+          </li>
+          <li>
+            MVC jest starszym wzorcem i jest szeroko stosowany w różnych technologiach, takich jak
+            tradycyjne aplikacje webowe, natywne aplikacje mobilne itp.
+          </li>
+        </ul>
+        <p>
+          Ostateczny wybór między MVC a MVVM zależy od konkretnej technologii, narzędzi i wymagań
+          projektowych. Obie architektury mają swoje zalety i są odpowiednie w różnych kontekstach.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between lg:block">
+    <div
+      class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"
+    >
+      <button
+        class="flex ml-auto gap-2 rounded-md p-1 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+          <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+        </svg>
+      </button>
+      <div class="flex gap-1">
+        <button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+            ></path>
+          </svg></button
+        ><button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

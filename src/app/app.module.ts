@@ -5,6 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterOutlet } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { SidebarComponentModule } from './components/sidebar/sidebar.component-module';
+import { DashboardComponentModule } from './components/dashboard/dashboard.component-module';
+import { WrapperComponentModule } from './components/wrapper/wrapper.component-module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +17,9 @@ import { AppRoutingModule } from './app-routing.module';
     RouterOutlet,
     HttpClientModule,
     AppRoutingModule,
+    SidebarComponentModule,
+    DashboardComponentModule,
+    WrapperComponentModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

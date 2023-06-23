@@ -1,0 +1,150 @@
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+  <div class="flex flex-grow flex-col gap-3">
+    <div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap break-words">
+      <div class="markdown prose w-full break-words dark:prose-invert dark">
+        <p>
+          Two-way data binding in Angular allows for synchronization of data between the component
+          and the template in both directions. It means that changes in the component can
+          automatically update the template, and vice versa, changes in the template can update the
+          component.
+        </p>
+        <p>
+          In Angular, two-way data binding is typically achieved using the
+          <code>[(ngModel)]</code> syntax, which combines property binding and event binding. Here's
+          how it works:
+        </p>
+        <ol>
+          <li>
+            Import the <code>FormsModule</code>: First, ensure that the <code>FormsModule</code> is
+            imported in your Angular module file (<code>app.module.ts</code> or relevant module
+            file). This module is required for using two-way data binding with <code>ngModel</code>.
+          </li>
+        </ol>
+        <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>typescript</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-typescript"><span class="hljs-keyword">import</span> {{'{'}} <span class="hljs-title class_">FormsModule</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/forms'</span>;
+
+        <span class="hljs-meta">@NgModule</span>({{'{'}}
+          <span class="hljs-attr">imports</span>: [
+            <span class="hljs-title class_">FormsModule</span>
+          ],
+          <span class="hljs-comment">// Other module configurations...</span>
+        })
+        <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AppModule</span> {{'{'}} }
+        </code></div></div></pre>
+        <ol start="2">
+          <li>
+            Component property and template binding: In your component class, declare a property and
+            bind it to an input field in the template using <code>[(ngModel)]</code>:
+          </li>
+        </ol>
+        <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>typescript</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-typescript"><span class="hljs-meta">@Component</span>({{'{'}}
+          <span class="hljs-attr">selector</span>: <span class="hljs-string">'app-example'</span>,
+          <span class="hljs-attr">template</span>: <span class="hljs-string">`
+            &lt;input [(ngModel)]="name" placeholder="Enter your name"&gt;
+            &lt;p&gt;Your name: {{'{'}}{{'{'}} name }}&lt;/p&gt;
+          `</span>
+        })
+        <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ExampleComponent</span> {{'{'}}
+          <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">''</span>;
+        }
+        </code></div></div></pre>
+        <p>
+          In the above example, the <code>name</code> property of the component is bound to the
+          input field using <code>[(ngModel)]</code>. Any changes made in the input field will
+          automatically update the <code>name</code> property, and vice versa.
+        </p>
+        <ol start="3">
+          <li>
+            Enable two-way binding with <code>ngModel</code> directive: To enable two-way binding
+            with <code>ngModel</code>, you need to import the <code>FormsModule</code> and use the
+            <code>ngModel</code> directive on the input element. Make sure to include the
+            <code>name</code> attribute on the input element as well.
+          </li>
+        </ol>
+        <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>html</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"name"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"name"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Enter your name"</span>&gt;</span>
+        </code></div></div></pre>
+        <p>
+          By using <code>[(ngModel)]</code>, Angular will automatically handle the synchronization
+          between the component and the template, updating the <code>name</code> property whenever
+          the input field changes, and updating the input field whenever the
+          <code>name</code> property changes.
+        </p>
+        <p>
+          It's important to note that two-way data binding requires the <code>FormsModule</code> to
+          be imported, and it works with form controls, such as input fields, checkboxes, radio
+          buttons, etc.
+        </p>
+        <p>
+          Additionally, if you're using Angular version 10 or later, you can use the
+          <code>[(ngModel)]</code> syntax without explicitly importing the <code>FormsModule</code>,
+          as it's included by default in the <code>CommonModule</code>.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between lg:block">
+    <div
+      class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"
+    >
+      <button
+        class="flex ml-auto gap-2 rounded-md p-1 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+          <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+        </svg>
+      </button>
+      <div class="flex gap-1">
+        <button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+            ></path>
+          </svg></button
+        ><button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

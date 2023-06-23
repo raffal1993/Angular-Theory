@@ -1,0 +1,148 @@
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+  <div class="flex flex-grow flex-col gap-3">
+    <div
+      class="min-h-[20px] flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4"
+    >
+      <div class="markdown prose w-full break-words dark:prose-invert dark">
+        <p>
+          Shadow DOM (Document Object Model) to technologia, która umożliwia tworzenie i zarządzanie
+          izolowanymi drzewami DOM wewnątrz elementów HTML. Pozwala na odseparowanie struktury HTML,
+          styli CSS i zachowania JavaScript dla danego elementu, co zapewnia hermetyczność i
+          izolację komponentu.
+        </p>
+        <p>Główne zalety Shadow DOM:</p>
+        <ol>
+          <li>
+            <p>
+              Izolacja stylów: Shadow DOM pozwala na definiowanie i stosowanie styli CSS, które są
+              ograniczone tylko do danego elementu. Style zdefiniowane wewnątrz Shadow DOM nie mają
+              wpływu na elementy poza nim, a style zewnętrzne nie przenikają do elementów wewnątrz
+              Shadow DOM.
+            </p>
+          </li>
+          <li>
+            <p>
+              Izolacja struktury: Elementy wewnątrz Shadow DOM są odizolowane od reszty dokumentu.
+              Oznacza to, że selektory CSS zastosowane wewnątrz Shadow DOM nie będą miały wpływu na
+              elementy poza nim, a elementy poza Shadow DOM nie będą miały dostępu do elementów
+              wewnątrz niego.
+            </p>
+          </li>
+          <li>
+            <p>
+              Encapsulation (enkapsulacja): Shadow DOM umożliwia ukrycie implementacji wewnętrznej
+              komponentu. Kod JavaScript, manipulacja DOM i zdarzenia są ograniczone tylko do Shadow
+              DOM i nie mają wpływu na resztę strony. To pozwala na tworzenie komponentów, które są
+              hermetyczne i niekolidują z innymi elementami na stronie.
+            </p>
+          </li>
+          <li>
+            <p>
+              Reusable Components (komponenty wielokrotnego użytku): Shadow DOM umożliwia tworzenie
+              komponentów, które mogą być używane wielokrotnie w różnych częściach strony lub w
+              różnych projektach. Komponenty z Shadow DOM są samowystarczalne i niezależne od
+              kontekstu, co ułatwia ich ponowne wykorzystanie.
+            </p>
+          </li>
+        </ol>
+        <p>Przykład użycia Shadow DOM w JavaScript:</p>
+        <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>javascript</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript"><span class="hljs-keyword">const</span> element = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'my-element'</span>);
+<span class="hljs-keyword">const</span> shadowRoot = element.<span class="hljs-title function_">attachShadow</span>({{'{'}} <span class="hljs-attr">mode</span>: <span class="hljs-string">'open'</span> });
+
+<span class="hljs-comment">// Definicja struktury HTML wewnątrz Shadow DOM</span>
+shadowRoot.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">`
+  &lt;style&gt;
+    /* Style dla elementu wewnątrz Shadow DOM */
+    :host {{'{'}}
+      display: block;
+      background-color: #f1f1f1;
+      padding: 10px;
+    }
+  &lt;/style&gt;
+  &lt;div&gt;
+    &lt;!-- Zawartość elementu wewnątrz Shadow DOM --&gt;
+    &lt;h2&gt;Hello Shadow DOM!&lt;/h2&gt;
+    &lt;p&gt;This content is inside the Shadow DOM.&lt;/p&gt;
+  &lt;/div&gt;
+`</span>;
+</code></div></div></pre>
+        <p>
+          W powyższym przykładzie element o id "my-element" ma dołączony Shadow DOM, w którym
+          definiowane są style CSS i struktura HTML. Style są ograniczone tylko do elementu wewnątrz
+          Shadow DOM, a struktura HTML jest izolowana od reszty strony.
+        </p>
+        <p>
+          Shadow DOM jest szeroko stosowany w tworzeniu komponentów webowych, w tym w technologii
+          Web Components, gdzie umożliwia tworzenie hermetycznych i wielokrotnie używalnych
+          komponentów interfejsu użytkownika.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between lg:block">
+    <div
+      class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"
+    >
+      <button
+        class="flex ml-auto gap-2 rounded-md p-1 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+          <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+        </svg>
+      </button>
+      <div class="flex gap-1">
+        <button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+            ></path>
+          </svg></button
+        ><button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

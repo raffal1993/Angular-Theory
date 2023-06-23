@@ -1,0 +1,65 @@
+<div class="markdown prose w-full break-words dark:prose-invert dark">
+  <p>
+    In Angular, a framework for building web applications, there is a concept called "life cycle
+    hooks" that allow for performing certain actions at different stages of a component's life
+    cycle. Life cycle hooks are methods that can be implemented in Angular components to react to
+    specific events during the creation, modification, or removal of a component.
+  </p>
+  <p>Below is a description of several important life cycle hooks in Angular:</p>
+  <ol>
+    <li>
+      <p>
+        <code>ngOnChanges</code>: This hook is executed whenever the value of one or more input
+        properties of a component changes.
+      </p>
+    </li>
+    <li>
+      <p>
+        <code>ngOnInit</code>: This hook is executed once after the component has been initialized.
+        It is commonly used for initializing component properties, fetching initial data, or
+        subscribing to observables.
+      </p>
+    </li>
+    <li>
+      <p>
+        <code>ngDoCheck</code>: This hook is executed during every change detection cycle. It is
+        called whenever Angular detects changes to the component or its child components.
+      </p>
+    </li>
+    <li>
+      <p>
+        <code>ngAfterContentInit</code>: This hook is executed once after Angular initializes the
+        content projected into the component.
+      </p>
+    </li>
+    <li>
+      <p>
+        <code>ngAfterContentChecked</code>: This hook is executed after Angular checks the content
+        projected into the component and its child components.
+      </p>
+    </li>
+    <li>
+      <p>
+        <code>ngAfterViewInit</code>: This hook is executed once after Angular initializes the
+        component's view and its child views.
+      </p>
+    </li>
+    <li>
+      <p>
+        <code>ngAfterViewChecked</code>: This hook is executed after Angular checks the component's
+        view and its child views.
+      </p>
+    </li>
+    <li>
+      <p>
+        <code>ngOnDestroy</code>: This hook is executed just before the component is destroyed and
+        removed from the component hierarchy. It is used for performing cleanup tasks, such as
+        unsubscribing from observables or releasing resources.
+      </p>
+    </li>
+  </ol>
+  <p>
+    Utilizing the appropriate life cycle hooks can be very useful for managing the life cycle of
+    components in Angular and controlling various stages of their operation.
+  </p>
+</div>

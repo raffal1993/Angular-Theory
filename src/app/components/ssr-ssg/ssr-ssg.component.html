@@ -1,0 +1,148 @@
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+  <div class="flex flex-grow flex-col gap-3">
+    <div class="flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4">
+      <div class="markdown prose w-full break-words dark:prose-invert dark">
+        <p>
+          SSR (Server-Side Rendering) i SSG (Static Site Generation) to dwie różne techniki używane
+          w tworzeniu stron internetowych w celu optymalizacji wydajności, SEO i UX. Oto krótkie
+          wyjaśnienie obu technik:
+        </p>
+        <ol>
+          <li>
+            SSR (Server-Side Rendering): SSR to technika, w której generowanie treści strony odbywa
+            się po stronie serwera. Gdy użytkownik wysyła żądanie o stronę, serwer przetwarza
+            żądanie i generuje kompletną stronę HTML, która jest następnie wysłana do przeglądarki.
+            Przeglądarka otrzymuje już wygenerowany HTML i może go wyświetlić natychmiastowo.
+            Dodatkowe interakcje, takie jak żądania AJAX, są obsługiwane po stronie klienta.
+          </li>
+        </ol>
+        <p>Zalety SSR:</p>
+        <ul>
+          <li>
+            Szybsze czasy ładowania stron, ponieważ przeglądarka otrzymuje gotowy HTML od serwera.
+          </li>
+          <li>Korzystne dla aplikacji wymagających dużo interakcji po stronie serwera.</li>
+          <li>
+            Lepsze wyniki SEO, ponieważ zawartość strony jest widoczna dla robotów indeksujących od
+            razu.
+          </li>
+        </ul>
+        <p>Wady SSR:</p>
+        <ul>
+          <li>
+            Większe obciążenie serwera, ponieważ serwer musi generować stronę dla każdego żądania.
+          </li>
+          <li>
+            Mniejsza elastyczność w stosowaniu pewnych technologii po stronie klienta, takich jak
+            niektóre frameworki JavaScript.
+          </li>
+        </ul>
+        <ol start="2">
+          <li>
+            SSG (Static Site Generation): SSG to technika, w której strona internetowa jest
+            generowana statycznie (przed wdrożeniem) z wykorzystaniem pre-renderingu. W czasie
+            budowania strony (build time), treść strony jest przetwarzana i generowany jest zestaw
+            statycznych plików HTML, CSS i JavaScript, które są gotowe do dostarczenia do
+            przeglądarki klienta. Gdy użytkownik odwiedza stronę, przeglądarka otrzymuje już
+            wygenerowany zestaw plików statycznych.
+          </li>
+        </ol>
+        <p>Zalety SSG:</p>
+        <ul>
+          <li>
+            Szybkie czasy ładowania stron, ponieważ przeglądarka otrzymuje gotowy zestaw statycznych
+            plików HTML, CSS i JavaScript.
+          </li>
+          <li>
+            Skalowalność, ponieważ statyczne pliki mogą być buforowane i dostarczane przez CDN
+            (Content Delivery Network).
+          </li>
+          <li>
+            Odporność na ataki typu Denial of Service (DoS), ponieważ nie ma potrzeby generowania
+            stron dynamicznie dla każdego żądania.
+          </li>
+        </ul>
+        <p>Wady SSG:</p>
+        <ul>
+          <li>
+            Mniej elastyczne w przypadku aplikacji wymagających interakcji po stronie klienta.
+          </li>
+          <li>Konieczność ponownego generowania strony przy każdej aktualizacji treści.</li>
+        </ul>
+        <p>
+          W praktyce często można połączyć obie techniki, wykorzystując SSR dla dynamicznych
+          interakcji i SSG dla statycznych stron lub części strony. Na przykład, używając frameworka
+          takiego jak Next.js w środowisku Node.js, można osiągnąć SSR dla niektórych części
+          aplikacji i generować statyczne strony dla innych, co pozwala na optymalne wykorzystanie
+          obu technik w zależności od potrzeb aplikacji.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between lg:block">
+    <div
+      class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"
+    >
+      <button
+        class="flex ml-auto gap-2 rounded-md p-1 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+          <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+        </svg>
+      </button>
+      <div class="flex gap-1">
+        <button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+            ></path>
+          </svg></button
+        ><button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -58,7 +58,7 @@
   "entities": {
     "component": {
       "type": "ANGULAR_COMPONENT",
-      "folder": "shared/components/$name$",
+      "folder": "components/$name$",
       "config": {
         "stylesExtension": "none",
         "viewEncapsulation": "None",
@@ -73,7 +73,7 @@
       "id": "service",
       "type": "ANGULAR_SERVICE",
       "suffix": "Service",
-      "folder": "core/services/$name$"
+      "folder": "services/$name$"
     },
     "query-model": {
       "type": "DATA_STRUCTURE",
@@ -89,13 +89,13 @@
       "id": "pipe",
       "type": "ANGULAR_PIPE",
       "suffix": "Pipe",
-      "folder": "shared/pipes/$name$"
+      "folder": "pipes/$name$"
     },
     "directive": {
       "id": "directive",
       "type": "ANGULAR_DIRECTIVE",
       "suffix": "Directive",
-      "folder": "shared/directives/$name$"
+      "folder": "directives/$name$"
     }
   }
 }

@@ -1,0 +1,196 @@
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+  <div class="flex flex-grow flex-col gap-3">
+    <div class="flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4">
+      <div class="markdown prose w-full break-words dark:prose-invert dark">
+        <p>
+          Flexbox, znany również jako Flexible Box Layout, to moduł CSS, który umożliwia elastyczne
+          układanie elementów w kontenerze. Flexbox został wprowadzony w CSS3 i zapewnia intuicyjne
+          i potężne narzędzia do tworzenia responsywnych układów stron internetowych.
+        </p>
+        <p>Podstawowe pojęcia związane z Flexbox to:</p>
+        <ol>
+          <li>
+            <p>Kontener (Container):</p>
+            <ul>
+              <li>Element, który jest ustawiony jako kontener flexbox.</li>
+              <li>Działa jako rodzic dla elementów flexowych.</li>
+              <li>
+                Aby zdefiniować kontener flexbox, należy ustawić na nim właściwość
+                <code>display</code> na wartość <code>flex</code> lub <code>inline-flex</code>.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>Elementy flexowe (Flex Items):</p>
+            <ul>
+              <li>Elementy, które są bezpośrednio zagnieżdżone w kontenerze flexbox.</li>
+              <li>Są to elementy, które zostaną ułożone wewnątrz kontenera flexbox.</li>
+            </ul>
+          </li>
+        </ol>
+        <p>Podstawowe właściwości flexbox to:</p>
+        <ol>
+          <li>
+            <p><code>display</code>:</p>
+            <ul>
+              <li>
+                Właściwość <code>display</code> z wartością <code>flex</code> lub
+                <code>inline-flex</code> ustawia element jako kontener flexbox.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p><code>flex-direction</code>:</p>
+            <ul>
+              <li>Określa kierunek rozmieszczenia elementów w kontenerze flexbox.</li>
+              <li>
+                Może mieć wartości: <code>row</code> (domyślnie), <code>row-reverse</code>,
+                <code>column</code> lub <code>column-reverse</code>.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p><code>justify-content</code>:</p>
+            <ul>
+              <li>Kontroluje rozmieszczenie elementów wzdłuż głównej osi kontenera flexbox.</li>
+              <li>
+                Określa, jak elementy są zarówno wyrównane, jak i rozmieszczone w kontenerze
+                flexbox.
+              </li>
+              <li>
+                Może mieć wartości: <code>flex-start</code>, <code>flex-end</code>,
+                <code>center</code>, <code>space-between</code>, <code>space-around</code> lub
+                <code>space-evenly</code>.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p><code>align-items</code>:</p>
+            <ul>
+              <li>Kontroluje wyrównanie elementów wzdłuż drugiej osi kontenera flexbox.</li>
+              <li>Określa, jak elementy są wyrównane w kontenerze flexbox w pionowym kierunku.</li>
+              <li>
+                Może mieć wartości: <code>flex-start</code>, <code>flex-end</code>,
+                <code>center</code>, <code>baseline</code> lub <code>stretch</code>.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p><code>flex-grow</code>:</p>
+            <ul>
+              <li>
+                Określa, jak elementy flexowe mają rosnąć, jeśli istnieje dodatkowa dostępna
+                przestrzeń w kontenerze.
+              </li>
+              <li>
+                Domyślnie wartość to 0, co oznacza, że elementy flexowe nie będą się rozciągać.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p><code>flex-shrink</code>:</p>
+            <ul>
+              <li>
+                Określa, jak elementy flexowe mają się kurczyć, jeśli nie ma wystarczającej
+                przestrzeni w kontenerze.
+              </li>
+              <li>
+                Domyślnie wartość to 1, co oznacza, że elementy flexowe będą się kurczyć, aby
+                dopasować się do kontenera.
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <p>
+          Flexbox oferuje również wiele innych właściwości i skrótów, takich jak
+          <code>flex-wrap</code>, <code>align-content</code>, <code>flex-basis</code>,
+          <code>order</code> itp., które pozwalają na jeszcze większą kontrolę nad układem
+          elementów.
+        </p>
+        <p>Przykład użycia Flexbox w CSS:</p>
+        <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>css</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-css"><span class="hljs-selector-class">.container</span> {{'{'}}
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">align-items</span>: center;
+}
+
+<span class="hljs-selector-class">.item</span> {{'{'}}
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span>;
+}
+</code></div></div></pre>
+        <p>
+          W tym przykładzie <code>.container</code> jest ustawiony jako kontener flexbox, a
+          <code>.item</code> są elementami flexowymi. Elementy flexowe są równomiernie rozłożone w
+          kontenerze, a ich marginesy wynoszą 10 pikseli.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between lg:block">
+    <div
+      class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"
+    >
+      <button
+        class="flex ml-auto gap-2 rounded-md p-1 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+          <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+        </svg>
+      </button>
+      <div class="flex gap-1">
+        <button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+            ></path>
+          </svg></button
+        ><button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

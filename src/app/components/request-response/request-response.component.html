@@ -1,0 +1,126 @@
+<div class="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+  <div class="flex flex-grow flex-col gap-3">
+    <div
+      class="min-h-[20px] flex items-start overflow-x-auto whitespace-pre-wrap break-words flex-col gap-4"
+    >
+      <div class="markdown prose w-full break-words dark:prose-invert dark">
+        <p>
+          Żądanie (Request): Żądanie (request) jest wysyłane przez klienta (client) do serwera
+          (server) w celu wykonania określonej akcji lub pobrania zasobu. Składa się z następujących
+          elementów:
+        </p>
+        <ol>
+          <li>
+            Metoda HTTP (HTTP method): Określa rodzaj operacji do wykonania, na przykład GET, POST,
+            PUT, PATCH, DELETE itp.
+          </li>
+          <li>
+            Adres URL (Uniform Resource Locator): Określa adres zasobu lub punktu końcowego na
+            serwerze.
+          </li>
+          <li>
+            Nagłówki (Headers): Zawierają dodatkowe informacje o żądaniu, takie jak typ zawartości
+            (content type), uwierzytelnianie (authentication) i dyrektywy dotyczące buforowania
+            (caching directives).
+          </li>
+          <li>
+            Ciało (Body) (opcjonalne): Zawiera dane wysyłane do serwera, zwykle używane w żądaniach
+            typu POST lub PUT do przekazania danych.
+          </li>
+        </ol>
+        <p>
+          Odpowiedź (Response): Odpowiedź (response) to odpowiedź serwera na żądanie klienta.
+          Zawiera informacje o statusie żądania oraz wszelkie żądane dane lub zasoby. Odpowiedź
+          zwykle składa się z następujących elementów:
+        </p>
+        <ol>
+          <li>
+            Linia statusu (Status Line): Określa kod stanu (status code) i krótki opis tekstowy
+            wyniku odpowiedzi.
+          </li>
+          <li>
+            Nagłówki (Headers): Zapewniają dodatkowe informacje o odpowiedzi, takie jak typ
+            zawartości (content type), dyrektywy buforowania (caching directives) i szczegóły
+            serwera (server details).
+          </li>
+          <li>
+            Ciało (Body) (opcjonalne): Zawiera rzeczywiste dane lub żądane zasoby, takie jak treść
+            HTML, dane JSON lub zawartość pliku.
+          </li>
+        </ol>
+        <p>
+          Cykl żądanie-odpowiedź (Request-Response cycle) stanowi podstawę komunikacji między
+          klientami a serwerami w różnych technologiach webowych, interfejsach API i protokołach
+          sieciowych, umożliwiając wymianę danych i interakcję między różnymi komponentami systemu
+          rozproszonego.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between lg:block">
+    <div
+      class="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible"
+    >
+      <button
+        class="flex ml-auto gap-2 rounded-md p-1 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+          <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+        </svg>
+      </button>
+      <div class="flex gap-1">
+        <button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+            ></path>
+          </svg></button
+        ><button
+          class="p-1 rounded-md hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200 disabled:dark:hover:text-gray-400"
+        >
+          <svg
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
